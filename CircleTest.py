@@ -5,9 +5,9 @@ folder_name = "fila_256"
 try: 
     os.mkdir(folder_name)
 except OSError:
-    print (f"Directory {folder_name} already exists")
+    print(f"Directory {folder_name} already exists")
 else:
-    print (f"Created directory {folder_name}")
+    print(f"Created directory {folder_name}")
 
 def b10(num):                                    # Decimal to Scientific Notation
     return "{:.10e}".format(num)
@@ -169,7 +169,7 @@ print(f"Success: ~/{folder_name}/fila_256.beam")
 #new_sm_circ_1 = sm_circ_1[-sm_start:]          + sm_circ_1[:sm_half - sm_start]
 #new_sm_circ_2 = sm_circ_2[sm_half + sm_start:] + sm_circ_2[:sm_start + 1]
 #
-# Replace overlap with cut sm circle
+#Replace overlap with cut sm circle
 #circ_1[(13*n//16):(15*n//16 + 1)] = new_sm_circ_2
 #circ_1[(1*n//16):(3*n//16 + 1)] = new_sm_circ_1
 ###
@@ -177,15 +177,15 @@ print(f"Success: ~/{folder_name}/fila_256.beam")
 # . mass file (mass to points)
 # Add springs to inside so it doesn't just collapse on the other one
     # Massive spring constant
-# Run the 100 Rig / 0.7-0.05x one (longer)
 
-# Make github with markdown tutorial
+# markdown tutorial
 # Docker cp
 # Add them as collab 
 # Add docker link somehow???
 # Make the markdown file like a tutorial
 # Make movie recordings
 # Organize simulation files 
+
 # Think about 3d?
 # Self intersection and permeability
 # Correct rho and mu
