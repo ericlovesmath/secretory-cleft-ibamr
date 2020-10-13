@@ -2,6 +2,11 @@
 
 This project uses IBAMR and VisIt to simulate secretory clefts in CD8+ T-Cells.
 
+
+## Examples
+
+![PreGrab](Screenshots/PreGrab.png)
+
 ## Installation
 
 ### Installing Docker
@@ -10,7 +15,7 @@ This project uses IBAMR and VisIt to simulate secretory clefts in CD8+ T-Cells.
 https://docs.docker.com/get-docker/
 
 #### MacOS
-Recommended install with cask: ```brew cask install docker```
+Recommended install with cask: `brew cask install docker`
 
 ### Pulling Docker Image from Docker Hub
 ```
@@ -23,10 +28,24 @@ docker run -n <YOUR CONTAINER NAME> -it <YOUR IMAGE NAME>
 
 ## Usage
 
+### Generate Simulation Input data
+```
+cd /PATH/TO/FOLDER
+git clone https://github.com/ericlovesmath/secretory-cleft-ibamr
+cd secretory-cleft-ibamr
+python CircleTest.py # Requires Python 3.6+
+```
+Edit `secretory-cleft-ibamr/CircleTest.py` following the instructions written in the code.
+
+`secretory-cleft-ibamr/fila_256` will be generated holding `FILA_256.xxx` files for IBAMR.
+
 ### Running Simulation
 ```
 docker start -i <YOUR CONTAINER NAME>
 cd /usr/test/sfw/ibamr/ibamr-objs-opt/examples/IB/explicit/test
+```
+Replace `FILA_256.xxx` from the Python script
+```
 ./main2d input2d
 exit
 ```
@@ -43,26 +62,24 @@ https://wci.llnl.gov/simulation/computer-codes/visit/executables
 
 (Include Screenshots here)
 
-Open > viz_IB2d > lag_data.visit
+#### Navigating VisIt
 
-Add > Subset > fila_256_mesh
+> Open > `secretory-cleft-ibamr/viz_IB2d` > lag_data.visit
 
-Open > viz_IB2d > dumps.visit
+> Add > Subset > fila_256_mesh
 
-dumps.visit:Subset - levels > Delete
+> Open > dumps.visit
 
-Add > Pseudocolor > P
+> dumps.visit:Subset - levels > Delete
 
-dumps.visit:Pseudocolor - P > Pseudocolor > Opacity > Constant > ~20%
+> Add > Pseudocolor > P
 
-Draw
+> dumps.visit:Pseudocolor - P > Pseudocolor > Opacity > Constant > 20%
+
+> Draw
 
 <!--
-# markdown tutorial
-# Docker cp
 # Add them as collab 
-# Add docker link somehow???
-# Make the markdown file like a tutorial
-# Make movie recordings
-# Organize simulation files 
+# Make movie recordings / Screenshots + labels
+# More gifs
 -->
