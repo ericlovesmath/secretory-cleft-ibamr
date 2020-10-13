@@ -44,7 +44,9 @@ Edit `secretory-cleft-ibamr/CircleTest.py` following the instructions written in
 docker start -i <YOUR CONTAINER NAME>
 cd /usr/test/sfw/ibamr/ibamr-objs-opt/examples/IB/explicit/test
 ```
-Replace `FILA_256.xxx` from the Python script
+Replace all `FILA_256.xxx` from the Python script
+
+Leave preexisting `FILA_256.xxx` files not generated from the Python script alone
 ```
 ./main2d input2d
 exit
@@ -52,15 +54,13 @@ exit
 ### Exporting Simulation Data
 ```
 cd /PATH/TO/FOLDER
-docker cp <YOUR CONTAINER NAME>:/usr/test/sfw/ibamr/ibamr-objs-opt/examples/IB/explicit/ex3/viz_IB2d/ .
+docker cp <YOUR CONTAINER NAME>:/usr/test/sfw/ibamr/ibamr-objs-opt/examples/IB/explicit/test/viz_IB2d/ .
 ```
 
 ## Visualizing Data
 
 ### Installing VisIt (Binary Package)
 https://wci.llnl.gov/simulation/computer-codes/visit/executables
-
-(Include Screenshots here)
 
 #### Navigating VisIt
 
