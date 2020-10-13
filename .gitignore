@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 Docker.txt
+CircleTestOriginal.py
+.vscode
