@@ -83,5 +83,5 @@ https://wci.llnl.gov/simulation/computer-codes/visit/executables
 <!--
 # Add them as collab 
 # Make movie recordings / Screenshots + labels
-# More gifs
+# Make movies smaller size, make them into gifs and whatever
 -->
