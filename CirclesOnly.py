@@ -23,7 +23,7 @@ r2, (x2, y2) = 1, (5, 3)                         # Circle 2, Radius and Center
 n = 64                                           # Number of Points
 spring_const = 5000                              # Spring Constant
 rest_length = round(r1*sqrt(2-2*cos(2*pi/n)), 3) # Rest Length (recommended above)
-Rigidity = 5000000                               # Beam Rigidity
+Rigidity = 4000000                               # Beam Rigidity
 r_sm = r1*(0.4)                                  # Radius of Smaller Circles
 n_sm = n//2                                      # Number of Points on Smaller Circles
 # Generates small circles centered at pi/4 and -pi/4 radians
@@ -80,7 +80,7 @@ for x in range(n):
 for x in range(-1*n//16 ,n//16 + 1):
     pullbar_len_formula = 0.7 - 0.05*abs(x) # <-- <-- <-- <-- <-- <-- <-- <-- <-- <-- <-- <-- 
     print(pullbar_len_formula)
-    file_out.write(f"{n//2 - 1*x} {x%n} {b10(spring_const)} {b10(pullbar_len_formula)}\n")
+    file_out.write(f"{n//2 - 3*x} {x%n} {b10(spring_const//10)} {b10(pullbar_len_formula)}\n")
 
 ###  CONNECTING BARS ###
 
@@ -108,7 +108,7 @@ for x in range(n):
 #for x in range(n_big//16 + 1, 15*n_big//16):
 #    file_out.write(f"{x%n_big} {(x+1)%n_big} {(x+2)%n_big} {b10(Rigidity)}\n")
 for x in range(n):
-    file_out.write(f"{n+x%n} {n+(x+1)%n} {n+(x+2)%n} {b10(Rigidity*100)}\n")
+    file_out.write(f"{n+x%n} {n+(x+1)%n} {n+(x+2)%n} {b10(500000000)}\n")
 
 file_out.write("# idx1, idx2, idx3, rigidity\n")
 file_out.close()
@@ -166,4 +166,3 @@ print(f"Success: ~/{folder_name}/fila_256.beam")
 # Why did it just go around and work though I don't get it
 
 # TODO try removing pull bars, move further back? Shorter pull bars?
-        # YES YES I SHOULD REDUCE BEAM STRENGTH FOR THE LEFT ONE DIP
