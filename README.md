@@ -6,6 +6,8 @@ This project uses IBAMR and VisIt to simulate secretory clefts in CD8+ T-Cells.
 ## Examples
 
 ![PreGrab](Screenshots/PreGrab.png)
+[Rigidity 30x](Screenshots/0.7x30.mpg)
+[Rigidity 100x](Screenshots/0.7x100.mpg)
 
 ## Installation
 

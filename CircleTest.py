@@ -144,36 +144,6 @@ print(f"Success: ~/{folder_name}/fila_256.beam")
 #   Testing out beams
 # Stability
 
-###
-# Generates small circles centered at pi/4 and -pi/4 radians
-#smallcirc_1 = circ(circ_1[n//8][0],circ_1[n//8][1],r_small,n_small)
-#smallcirc_2 = circ(circ_1[7*n//8][0],circ_1[7*n//8][1],r_small,n_small)
-#
-# Cuts small circles inside larger circle
-#newSmallcirc_1 = smallcirc_1[(7*n_small//8):] + smallcirc_1[:(3*n_small//8 + 1)]
-#newSmallcirc_2 = smallcirc_2[(5*n_small//8):] + smallcirc_2[:(n_small//8 + 1)]
-#
-# Replace overlap with cut small circle
-#circ_1[(13*n//16):(15*n//16 + 1)] = newSmallcirc_2
-#circ_1[(1*n//16):(3*n//16 + 1)] = newSmallcirc_1
-###
-
-###
-# Generates sm circles centered at pi/4 and -pi/4 radians
-#sm_start = n//8
-#sm_half  = n//2
-#sm_circ_1 = circ(circ_1[ sm_start][0], circ_1[ sm_start][1], r_sm, n_sm)
-#sm_circ_2 = circ(circ_1[-sm_start][0], circ_1[-sm_start][1], r_sm, n_sm)
-#
-# Cuts sm circles inside larger circle
-#new_sm_circ_1 = sm_circ_1[-sm_start:]          + sm_circ_1[:sm_half - sm_start]
-#new_sm_circ_2 = sm_circ_2[sm_half + sm_start:] + sm_circ_2[:sm_start + 1]
-#
-#Replace overlap with cut sm circle
-#circ_1[(13*n//16):(15*n//16 + 1)] = new_sm_circ_2
-#circ_1[(1*n//16):(3*n//16 + 1)] = new_sm_circ_1
-###
-
 # . mass file (mass to points)
 # Add springs to inside so it doesn't just collapse on the other one
     # Massive spring constant
