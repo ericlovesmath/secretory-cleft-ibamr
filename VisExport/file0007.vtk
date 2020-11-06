@@ -1,0 +1,31 @@
+# vtk DataFile Version 4.2
+vtk output
+ASCII
+DATASET UNSTRUCTURED_GRID
+FIELD FieldData 5
+avtOriginalBounds 1 6 double
+4.1231880188 5.1585006714 2.8304717541 4.0602698326 0 0 
+MeshName 1 1 string
+fila_256_mesh
+
+CYCLE 1 1 int
+8960 
+TIME 1 1 double
+0.0010421186172 
+VisItExpressions 1 0 string
+
+POINTS 4 float
+5.06209 2.86824 0 4.92308 3.3665 0 4.12319 4.06027 0 
+5.1585 2.83047 0 
+CELLS 4 12
+2 0 1 
+2 0 3 
+2 1 2 
+2 2 3 
+
+CELL_TYPES 4
+3
+3
+3
+3
+
