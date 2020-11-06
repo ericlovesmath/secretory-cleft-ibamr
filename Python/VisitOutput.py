@@ -1,5 +1,6 @@
 #/Applications/VisIt.app/Contents/Resources/3.1.2/../bin/visit -cli -s ~/Desktop/UCI/Python/VisitOutput.py
-OpenDatabase("~/Desktop/UCI/Simulations/TrapezoidGoWhee/viz_IB2d/lag_data.visit")
+simName = raw_input("Simulation Name (Inside ./Simulations): ")
+OpenDatabase("~/Desktop/UCI/Simulations/"+simName+"/viz_IB2d/lag_data.visit")
 AddPlot("Subset", "fila_256_mesh")
 for i in range(TimeSliderGetNStates()):
     SetTimeSliderState(i)
@@ -10,7 +11,7 @@ for i in range(TimeSliderGetNStates()):
     dbAtts.filename = "file%04d" % i
     dbAtts.variables = ("default")
     ExportDatabase(dbAtts)
-    
+
 # vtk to txt
 
 for fileID in range(TimeSliderGetNStates()):
@@ -28,10 +29,32 @@ for fileID in range(TimeSliderGetNStates()):
     
     # Output
     outputFile = open("./VisExport/Analysis/" + format(fileID, "04") + ".txt", "w")
-    outputFile.write("x, y\n")
+    outputFile.write("# x, y\n")
     for coord in coords:
         outputFile.write(" ".join(coord)+"\n")
 
 outputFile.close()
+
+# Images
+s = SaveWindowAttributes()
+s.format = s.PNG
+s.fileName = "slice"
+s.width, s.height = 1024,768
+s.screenCapture = 0
+s.outputDirectory = "./VisExport/Images"
+s.outputToCurrentDirectory = 0
+SetSaveWindowAttributes(s)
+
+names = []
+for state in range(TimeSliderGetNStates()):
+  SetTimeSliderState(state)
+  SaveWindow()
+
+# gif
+import os
+print("VisIt: Message - Rendering gif...")
+os.system("convert -delay 30 -loop 0 ./VisExport/Images/*.png ./VisExport/Images/sim.gif")
+print("VisIt: Message - Saving gif...")
+print("VisIt: Message - Saved ./VisExport/Images/sim.gif")
 
 exit()
