@@ -6,7 +6,7 @@ for i in range(TimeSliderGetNStates()):
     SetTimeSliderState(i)
     DrawPlots()
     dbAtts = ExportDBAttributes()
-    dbAtts.dirname = "./VisExport"
+    dbAtts.dirname = "./VisExport/vtk"
     dbAtts.db_type = "VTK"
     dbAtts.filename = "file%04d" % i
     dbAtts.variables = ("default")
@@ -15,7 +15,7 @@ for i in range(TimeSliderGetNStates()):
 # vtk to txt
 
 for fileID in range(TimeSliderGetNStates()):
-    fileLocation = "./VisExport/file" + format(fileID, "04") + ".vtk"
+    fileLocation = "./VisExport/vtk/file" + format(fileID, "04") + ".vtk"
     with open(fileLocation, "r") as f:
         vtkText = f.readlines()
     for lineID in range(len(vtkText)):
@@ -29,7 +29,7 @@ for fileID in range(TimeSliderGetNStates()):
     
     # Output
     outputFile = open("./VisExport/Analysis/" + format(fileID, "04") + ".txt", "w")
-    outputFile.write("# x, y\n")
+    #outputFile.write("# x, y\n")
     for coord in coords:
         outputFile.write(" ".join(coord)+"\n")
 
@@ -54,7 +54,21 @@ for state in range(TimeSliderGetNStates()):
 import os
 print("VisIt: Message - Rendering gif...")
 os.system("convert -delay 30 -loop 0 ./VisExport/Images/*.png ./VisExport/Images/sim.gif")
+    # If you're not on a UNIX system then use ffmpeg, or just comment this out
 print("VisIt: Message - Saving gif...")
 print("VisIt: Message - Saved ./VisExport/Images/sim.gif")
 
 exit()
+
+
+Pressure = '''
+OpenDatabase("~/Desktop/UCI/Simulations/rough_nom/viz_IB2d/dumps.visit")
+DeleteAllPlots()
+AddPlot("Pseudocolor", "P")
+DrawPlots()
+p = PseudocolorAttributes()
+p # Lists p
+p.opacityType = 2 # Means Constant
+p.opacity = 0.2
+SetPlotOptions(p)
+'''

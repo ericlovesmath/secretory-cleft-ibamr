@@ -3,14 +3,14 @@ ScriptVersion = "3.1.2"
 if ScriptVersion != Version():
     print "This script is for VisIt %s. It may not work with version %s" % (ScriptVersion, Version())
 ShowAllWindows()
-OpenDatabase("~/Desktop/UCI/Simulations/rough_nom/viz_IB2d/lag_data.visit", 0)
+OpenDatabase("~/Desktop/UCI/Simulations/BIG_Nom/viz_IB2d/lag_data.visit", 0)
 # The UpdateDBPluginInfo RPC is not supported in the VisIt module so it will not be logged.
 AddPlot("Subset", "fila_256_mesh", 1, 1)
 SetTimeSliderState(0)
 DrawPlots()
 ExportDBAtts = ExportDBAttributes()
 ExportDBAtts.allTimes = 0
-ExportDBAtts.dirname = "./VisExport"
+ExportDBAtts.dirname = "./VisExport/vtk"
 ExportDBAtts.filename = "file0000"
 ExportDBAtts.timeStateFormat = "_%04d"
 ExportDBAtts.db_type = "VTK"
@@ -24,7 +24,7 @@ SetTimeSliderState(1)
 DrawPlots()
 ExportDBAtts = ExportDBAttributes()
 ExportDBAtts.allTimes = 0
-ExportDBAtts.dirname = "./VisExport"
+ExportDBAtts.dirname = "./VisExport/vtk"
 ExportDBAtts.filename = "file0001"
 ExportDBAtts.timeStateFormat = "_%04d"
 ExportDBAtts.db_type = "VTK"
@@ -38,7 +38,7 @@ SetTimeSliderState(2)
 DrawPlots()
 ExportDBAtts = ExportDBAttributes()
 ExportDBAtts.allTimes = 0
-ExportDBAtts.dirname = "./VisExport"
+ExportDBAtts.dirname = "./VisExport/vtk"
 ExportDBAtts.filename = "file0002"
 ExportDBAtts.timeStateFormat = "_%04d"
 ExportDBAtts.db_type = "VTK"
@@ -52,7 +52,7 @@ SetTimeSliderState(3)
 DrawPlots()
 ExportDBAtts = ExportDBAttributes()
 ExportDBAtts.allTimes = 0
-ExportDBAtts.dirname = "./VisExport"
+ExportDBAtts.dirname = "./VisExport/vtk"
 ExportDBAtts.filename = "file0003"
 ExportDBAtts.timeStateFormat = "_%04d"
 ExportDBAtts.db_type = "VTK"
@@ -66,7 +66,7 @@ SetTimeSliderState(4)
 DrawPlots()
 ExportDBAtts = ExportDBAttributes()
 ExportDBAtts.allTimes = 0
-ExportDBAtts.dirname = "./VisExport"
+ExportDBAtts.dirname = "./VisExport/vtk"
 ExportDBAtts.filename = "file0004"
 ExportDBAtts.timeStateFormat = "_%04d"
 ExportDBAtts.db_type = "VTK"
@@ -80,7 +80,7 @@ SetTimeSliderState(5)
 DrawPlots()
 ExportDBAtts = ExportDBAttributes()
 ExportDBAtts.allTimes = 0
-ExportDBAtts.dirname = "./VisExport"
+ExportDBAtts.dirname = "./VisExport/vtk"
 ExportDBAtts.filename = "file0005"
 ExportDBAtts.timeStateFormat = "_%04d"
 ExportDBAtts.db_type = "VTK"
@@ -94,7 +94,7 @@ SetTimeSliderState(6)
 DrawPlots()
 ExportDBAtts = ExportDBAttributes()
 ExportDBAtts.allTimes = 0
-ExportDBAtts.dirname = "./VisExport"
+ExportDBAtts.dirname = "./VisExport/vtk"
 ExportDBAtts.filename = "file0006"
 ExportDBAtts.timeStateFormat = "_%04d"
 ExportDBAtts.db_type = "VTK"
@@ -108,7 +108,7 @@ SetTimeSliderState(7)
 DrawPlots()
 ExportDBAtts = ExportDBAttributes()
 ExportDBAtts.allTimes = 0
-ExportDBAtts.dirname = "./VisExport"
+ExportDBAtts.dirname = "./VisExport/vtk"
 ExportDBAtts.filename = "file0007"
 ExportDBAtts.timeStateFormat = "_%04d"
 ExportDBAtts.db_type = "VTK"
@@ -122,8 +122,36 @@ SetTimeSliderState(8)
 DrawPlots()
 ExportDBAtts = ExportDBAttributes()
 ExportDBAtts.allTimes = 0
-ExportDBAtts.dirname = "./VisExport"
+ExportDBAtts.dirname = "./VisExport/vtk"
 ExportDBAtts.filename = "file0008"
+ExportDBAtts.timeStateFormat = "_%04d"
+ExportDBAtts.db_type = "VTK"
+ExportDBAtts.db_type_fullname = "VTK_1.0"
+ExportDBAtts.variables = ("default")
+ExportDBAtts.writeUsingGroups = 0
+ExportDBAtts.groupSize = 48
+DBExportOpts = {'Tetrahedralize': 0, 'FileFormat': 'Legacy Ascii'}
+ExportDatabase(ExportDBAtts, DBExportOpts)
+SetTimeSliderState(9)
+DrawPlots()
+ExportDBAtts = ExportDBAttributes()
+ExportDBAtts.allTimes = 0
+ExportDBAtts.dirname = "./VisExport/vtk"
+ExportDBAtts.filename = "file0009"
+ExportDBAtts.timeStateFormat = "_%04d"
+ExportDBAtts.db_type = "VTK"
+ExportDBAtts.db_type_fullname = "VTK_1.0"
+ExportDBAtts.variables = ("default")
+ExportDBAtts.writeUsingGroups = 0
+ExportDBAtts.groupSize = 48
+DBExportOpts = {'Tetrahedralize': 0, 'FileFormat': 'Legacy Ascii'}
+ExportDatabase(ExportDBAtts, DBExportOpts)
+SetTimeSliderState(10)
+DrawPlots()
+ExportDBAtts = ExportDBAttributes()
+ExportDBAtts.allTimes = 0
+ExportDBAtts.dirname = "./VisExport/vtk"
+ExportDBAtts.filename = "file0010"
 ExportDBAtts.timeStateFormat = "_%04d"
 ExportDBAtts.db_type = "VTK"
 ExportDBAtts.db_type_fullname = "VTK_1.0"
@@ -965,6 +993,214 @@ SaveWindowAtts.opts.help = ""
 SetSaveWindowAttributes(SaveWindowAtts)
 SaveWindow()
 SetTimeSliderState(8)
+SaveWindowAtts = SaveWindowAttributes()
+SaveWindowAtts.outputToCurrentDirectory = 0
+SaveWindowAtts.outputDirectory = "./VisExport/Images"
+SaveWindowAtts.fileName = "slice"
+SaveWindowAtts.family = 1
+SaveWindowAtts.format = SaveWindowAtts.PNG  # BMP, CURVE, JPEG, OBJ, PNG, POSTSCRIPT, POVRAY, PPM, RGB, STL, TIFF, ULTRA, VTK, PLY, EXR
+SaveWindowAtts.width = 1024
+SaveWindowAtts.height = 768
+SaveWindowAtts.screenCapture = 0
+SaveWindowAtts.saveTiled = 0
+SaveWindowAtts.quality = 80
+SaveWindowAtts.progressive = 0
+SaveWindowAtts.binary = 0
+SaveWindowAtts.stereo = 0
+SaveWindowAtts.compression = SaveWindowAtts.None  # None, PackBits, Jpeg, Deflate, LZW
+SaveWindowAtts.forceMerge = 0
+SaveWindowAtts.resConstraint = SaveWindowAtts.ScreenProportions  # NoConstraint, EqualWidthHeight, ScreenProportions
+SaveWindowAtts.pixelData = 1
+SaveWindowAtts.advancedMultiWindowSave = 0
+SaveWindowAtts.subWindowAtts.win1.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win1.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win1.layer = 0
+SaveWindowAtts.subWindowAtts.win1.transparency = 0
+SaveWindowAtts.subWindowAtts.win1.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win2.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win2.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win2.layer = 0
+SaveWindowAtts.subWindowAtts.win2.transparency = 0
+SaveWindowAtts.subWindowAtts.win2.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win3.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win3.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win3.layer = 0
+SaveWindowAtts.subWindowAtts.win3.transparency = 0
+SaveWindowAtts.subWindowAtts.win3.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win4.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win4.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win4.layer = 0
+SaveWindowAtts.subWindowAtts.win4.transparency = 0
+SaveWindowAtts.subWindowAtts.win4.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win5.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win5.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win5.layer = 0
+SaveWindowAtts.subWindowAtts.win5.transparency = 0
+SaveWindowAtts.subWindowAtts.win5.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win6.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win6.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win6.layer = 0
+SaveWindowAtts.subWindowAtts.win6.transparency = 0
+SaveWindowAtts.subWindowAtts.win6.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win7.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win7.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win7.layer = 0
+SaveWindowAtts.subWindowAtts.win7.transparency = 0
+SaveWindowAtts.subWindowAtts.win7.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win8.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win8.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win8.layer = 0
+SaveWindowAtts.subWindowAtts.win8.transparency = 0
+SaveWindowAtts.subWindowAtts.win8.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win9.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win9.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win9.layer = 0
+SaveWindowAtts.subWindowAtts.win9.transparency = 0
+SaveWindowAtts.subWindowAtts.win9.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win10.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win10.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win10.layer = 0
+SaveWindowAtts.subWindowAtts.win10.transparency = 0
+SaveWindowAtts.subWindowAtts.win10.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win11.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win11.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win11.layer = 0
+SaveWindowAtts.subWindowAtts.win11.transparency = 0
+SaveWindowAtts.subWindowAtts.win11.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win12.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win12.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win12.layer = 0
+SaveWindowAtts.subWindowAtts.win12.transparency = 0
+SaveWindowAtts.subWindowAtts.win12.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win13.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win13.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win13.layer = 0
+SaveWindowAtts.subWindowAtts.win13.transparency = 0
+SaveWindowAtts.subWindowAtts.win13.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win14.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win14.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win14.layer = 0
+SaveWindowAtts.subWindowAtts.win14.transparency = 0
+SaveWindowAtts.subWindowAtts.win14.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win15.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win15.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win15.layer = 0
+SaveWindowAtts.subWindowAtts.win15.transparency = 0
+SaveWindowAtts.subWindowAtts.win15.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win16.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win16.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win16.layer = 0
+SaveWindowAtts.subWindowAtts.win16.transparency = 0
+SaveWindowAtts.subWindowAtts.win16.omitWindow = 0
+SaveWindowAtts.opts.types = ()
+SaveWindowAtts.opts.help = ""
+SetSaveWindowAttributes(SaveWindowAtts)
+SaveWindow()
+SetTimeSliderState(9)
+SaveWindowAtts = SaveWindowAttributes()
+SaveWindowAtts.outputToCurrentDirectory = 0
+SaveWindowAtts.outputDirectory = "./VisExport/Images"
+SaveWindowAtts.fileName = "slice"
+SaveWindowAtts.family = 1
+SaveWindowAtts.format = SaveWindowAtts.PNG  # BMP, CURVE, JPEG, OBJ, PNG, POSTSCRIPT, POVRAY, PPM, RGB, STL, TIFF, ULTRA, VTK, PLY, EXR
+SaveWindowAtts.width = 1024
+SaveWindowAtts.height = 768
+SaveWindowAtts.screenCapture = 0
+SaveWindowAtts.saveTiled = 0
+SaveWindowAtts.quality = 80
+SaveWindowAtts.progressive = 0
+SaveWindowAtts.binary = 0
+SaveWindowAtts.stereo = 0
+SaveWindowAtts.compression = SaveWindowAtts.None  # None, PackBits, Jpeg, Deflate, LZW
+SaveWindowAtts.forceMerge = 0
+SaveWindowAtts.resConstraint = SaveWindowAtts.ScreenProportions  # NoConstraint, EqualWidthHeight, ScreenProportions
+SaveWindowAtts.pixelData = 1
+SaveWindowAtts.advancedMultiWindowSave = 0
+SaveWindowAtts.subWindowAtts.win1.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win1.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win1.layer = 0
+SaveWindowAtts.subWindowAtts.win1.transparency = 0
+SaveWindowAtts.subWindowAtts.win1.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win2.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win2.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win2.layer = 0
+SaveWindowAtts.subWindowAtts.win2.transparency = 0
+SaveWindowAtts.subWindowAtts.win2.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win3.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win3.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win3.layer = 0
+SaveWindowAtts.subWindowAtts.win3.transparency = 0
+SaveWindowAtts.subWindowAtts.win3.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win4.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win4.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win4.layer = 0
+SaveWindowAtts.subWindowAtts.win4.transparency = 0
+SaveWindowAtts.subWindowAtts.win4.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win5.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win5.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win5.layer = 0
+SaveWindowAtts.subWindowAtts.win5.transparency = 0
+SaveWindowAtts.subWindowAtts.win5.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win6.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win6.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win6.layer = 0
+SaveWindowAtts.subWindowAtts.win6.transparency = 0
+SaveWindowAtts.subWindowAtts.win6.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win7.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win7.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win7.layer = 0
+SaveWindowAtts.subWindowAtts.win7.transparency = 0
+SaveWindowAtts.subWindowAtts.win7.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win8.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win8.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win8.layer = 0
+SaveWindowAtts.subWindowAtts.win8.transparency = 0
+SaveWindowAtts.subWindowAtts.win8.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win9.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win9.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win9.layer = 0
+SaveWindowAtts.subWindowAtts.win9.transparency = 0
+SaveWindowAtts.subWindowAtts.win9.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win10.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win10.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win10.layer = 0
+SaveWindowAtts.subWindowAtts.win10.transparency = 0
+SaveWindowAtts.subWindowAtts.win10.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win11.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win11.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win11.layer = 0
+SaveWindowAtts.subWindowAtts.win11.transparency = 0
+SaveWindowAtts.subWindowAtts.win11.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win12.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win12.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win12.layer = 0
+SaveWindowAtts.subWindowAtts.win12.transparency = 0
+SaveWindowAtts.subWindowAtts.win12.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win13.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win13.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win13.layer = 0
+SaveWindowAtts.subWindowAtts.win13.transparency = 0
+SaveWindowAtts.subWindowAtts.win13.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win14.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win14.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win14.layer = 0
+SaveWindowAtts.subWindowAtts.win14.transparency = 0
+SaveWindowAtts.subWindowAtts.win14.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win15.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win15.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win15.layer = 0
+SaveWindowAtts.subWindowAtts.win15.transparency = 0
+SaveWindowAtts.subWindowAtts.win15.omitWindow = 0
+SaveWindowAtts.subWindowAtts.win16.position = (0, 0)
+SaveWindowAtts.subWindowAtts.win16.size = (128, 128)
+SaveWindowAtts.subWindowAtts.win16.layer = 0
+SaveWindowAtts.subWindowAtts.win16.transparency = 0
+SaveWindowAtts.subWindowAtts.win16.omitWindow = 0
+SaveWindowAtts.opts.types = ()
+SaveWindowAtts.opts.help = ""
+SetSaveWindowAttributes(SaveWindowAtts)
+SaveWindow()
+SetTimeSliderState(10)
 SaveWindowAtts = SaveWindowAttributes()
 SaveWindowAtts.outputToCurrentDirectory = 0
 SaveWindowAtts.outputDirectory = "./VisExport/Images"
