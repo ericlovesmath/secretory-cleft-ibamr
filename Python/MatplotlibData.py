@@ -1,16 +1,6 @@
 import matplotlib.pyplot as plt
 
-def onclick(event):
-    if event.button == 1:
-         x.append(event.xdata)
-         y.append(event.ydata)
-    #clear frame
-    plt.clf()
-    plt.scatter(x,y); #inform matplotlib of the new data
-    plt.draw() #redraw
-
-
-for fileID in range(18):
+for fileID in range(11):
     X, Y = [], []
     A, B = [], []
     for i, line in enumerate(open(f"./VisExport/Analysis/{format(fileID, '04')}.txt", "r")):

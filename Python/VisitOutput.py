@@ -1,6 +1,7 @@
 #/Applications/VisIt.app/Contents/Resources/3.1.2/../bin/visit -cli -s ~/Desktop/UCI/Python/VisitOutput.py
 simName = raw_input("Simulation Name (Inside ./Simulations): ")
 OpenDatabase("~/Desktop/UCI/Simulations/"+simName+"/viz_IB2d/lag_data.visit")
+#OpenDatabase("~/Desktop/UCI/test/viz_IB2d/lag_data.visit")
 AddPlot("Subset", "fila_256_mesh")
 for i in range(TimeSliderGetNStates()):
     SetTimeSliderState(i)
@@ -51,24 +52,24 @@ for state in range(TimeSliderGetNStates()):
   SaveWindow()
 
 # gif
-import os
-print("VisIt: Message - Rendering gif...")
-os.system("convert -delay 30 -loop 0 ./VisExport/Images/*.png ./VisExport/Images/sim.gif")
+#import os
+#print("VisIt: Message - Rendering gif...")
+#os.system("convert -delay 30 -loop 0 ./VisExport/Images/*.png ./VisExport/Images/sim.gif")
     # If you're not on a UNIX system then use ffmpeg, or just comment this out
-print("VisIt: Message - Saving gif...")
-print("VisIt: Message - Saved ./VisExport/Images/sim.gif")
+#print("VisIt: Message - Saving gif...")
+#print("VisIt: Message - Saved ./VisExport/Images/sim.gif")
 
 exit()
 
 
-Pressure = '''
+#Pressure = '''
 OpenDatabase("~/Desktop/UCI/Simulations/rough_nom/viz_IB2d/dumps.visit")
 DeleteAllPlots()
 AddPlot("Pseudocolor", "P")
 DrawPlots()
-p = PseudocolorAttributes()
+
 p # Lists p
 p.opacityType = 2 # Means Constant
 p.opacity = 0.2
 SetPlotOptions(p)
-'''
+#'''

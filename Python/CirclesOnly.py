@@ -184,3 +184,38 @@ print(f"Success: ~/{folder_name}/fila_256.beam")
 
 # External Force, Get to Rho/Mu, and PyVisfile, Permeability, getting output (if pyvisfile doesn't work)
 # VisIT command line interface?
+
+"""
+Moving towards biophysical design of the scenario
+	1. Fix that little thing that happens, maybe by stiffening the springs inside the left cell
+	We want to reach equilibrium for both cells x30 or x100
+	Use as condition for new simulation
+	2. Make it so Mu and Rho (Fluid Viscosity and Fluid Mass Density) are same as reality
+		Mu and Rho of Water
+		Mu and time can be whatever unit I want (Currently corresponds to seconds?)
+	make cell bigger, like 5 times bigger
+	Mu should be fine as is
+	Rho want Rho = 10^-9 (right now 10^-4), but smaller means way more computational time
+		10^-6 is limit for Jonathan's experience
+	Can you get it to run up to 0.1 seconds in a day or so?
+	Springs between cells should rest at 0.01 m (but try 0.1)
+Copy all this information into vim-notes for UCI
+Equilibrium shape (final time step)
+	Start new simulation, create small half moon. If we restart there, it might go down to the way it was 
+	How long until it goes back to equilibrium?
+Direction 2: Take to 3d 
+Direction 3: Take the whole thing and put in into an HPC
+	UCI's HPC3 is shutting down and restarting on December, push it into future
+If one cell was pushed against another, will a cleft form, and what's the probability?
+	Missing two things
+	1. External Force
+	2. Springs that only SOMETIMES exert force.
+		IRL springs only engage when they get close
+	... which is why we should do the first goal of answering "how long"
+"""
+
+"""Set up oval, test so its not so... wobbly?, lower rho Keep track of how much expanding/shrinking at any time"""
+
+"""
+How are 3d files input structured?
+"""

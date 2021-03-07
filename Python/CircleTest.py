@@ -83,17 +83,17 @@ for x in range(n):
     file_out.write(f"{n_big + (x%n)} {n_big + (x+1)%n} {b10(spring_const)} {b10(rest_length)}\n")
 
 ######  PULL BARS #####
-for x in range(-1*n//16 ,n//16 + 1):
-    pullbar_len_formula = 0.7 - 0.05*abs(x) # <-- <-- <-- <-- <-- <-- <-- <-- <-- <-- <-- <-- 
-    print(pullbar_len_formula)
-    file_out.write(f"{n_big//2 - 4*x} {x%n_big} {b10(spring_const)} {b10(pullbar_len_formula)}\n")
+#for x in range(-1*n//16 ,n//16 + 1):
+#    pullbar_len_formula = 0.5 - 0.02*abs(x) # <-- <-- <-- <-- <-- <-- <-- <-- <-- <-- <-- <-- 
+#    print(pullbar_len_formula)
+#    file_out.write(f"{n_big//2 - 4*x} {x%n_big} {b10(spring_const)} {b10(pullbar_len_formula)}\n")
 
 ###  CONNECTING BARS ###
 
-for x in range(1,5*n_sm//16):
-    file_out.write(f"{n//16 + x} {n_big + n//2 - x - n//9} {b10(spring_const)} {b10(0.2)}\n")
-for x in range(1,5*n_sm//16):
-    file_out.write(f"{(-n//16 - x)%n_big} {n_big + n//2 + x + n//9} {b10(spring_const)} {b10(0.2)}\n")
+#for x in range(1,5*n_sm//16):
+#    file_out.write(f"{n//16 + x} {n_big + n//2 - x - n//9} {b10(spring_const)} {b10(0.1)}\n")
+#for x in range(1,5*n_sm//16):
+#    file_out.write(f"{(-n//16 - x)%n_big} {n_big + n//2 + x + n//9} {b10(spring_const)} {b10(0.1)}\n")
 
 file_out.write("# idx1, idx2, spring constant, rest length\n")
 file_out.close()
