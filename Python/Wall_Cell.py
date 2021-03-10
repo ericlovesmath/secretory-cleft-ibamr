@@ -2,7 +2,7 @@ from math import cos, sin, pi, sqrt
 import os
 
 folder_name = "fila_256"
-try: 
+try:
     os.mkdir(folder_name)
 except OSError:
     print(f"Directory {folder_name} already exists")
@@ -10,33 +10,39 @@ else:
     print(f"Created directory {folder_name}")
 
 # Decimal to Scientific Notation
-def b10(num):                                    
+def b10(num):
     return "{:.10e}".format(num)
 
+class Cells:
+    def __init__(self):
+        pass
+
 # Generates coordinates of circle
-class Circle:
+class Circle(Cells):
     def __init__(self, x, y, r, n):
         self.x = x
         self.y = y
         self.r = r
         self.n = n
-        self.coords = [(cos(2*pi/n_circ*i)*r + x, sin(2*pi/n_circ*i)*r + y)
-            for i in range(0,n_circ)]
+        self.coords = [(cos(2*pi/n_circ*i)*r + x,
+                        sin(2*pi/n_circ*i)*r + y)
+                        for i in range(0,n_circ)]
     def rotate(self, angle):
-        self.coords = [(cos(2*pi/n_circ*i + angle)*r + x, sin(2*pi/n_circ*i+ angle)*r + y)
-            for i in range(0,n_circ)]
+        self.coords = [(cos(2*pi/n_circ*i + angle)*r + x,
+                        sin(2*pi/n_circ*i+ angle)*r + y)
+                        for i in range(0,n_circ)]
 
 # Generates coordinates of a wall
-class Wall:
+class Wall(Cells):
     def __init__(self, x1, y1, x2, y2, n):
         self.x1 = x1
         self.x2 = x2
         self.y1 = y1
         self.y2 = y2
         self.n = n
-        self.coords = [(x1 + i*(x2-x1)/n, y1 + i*(y2-y1)/n) 
+        self.coords = [(x1 + i*(x2-x1)/n, y1 + i*(y2-y1)/n)
             for i in range(0,n+1)]
-        
+
 # Variables
 r, (x, y) = 2, (6, 4)                       # Circle 1, Radius and Center
 x1, y1, x2, y2 = 2,1, 2,7
