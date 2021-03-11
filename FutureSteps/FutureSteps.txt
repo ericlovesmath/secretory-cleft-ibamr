@@ -1,0 +1,41 @@
+Moving towards biophysical design of the scenario
+	1. Fix that little thing that happens, maybe by stiffening the springs inside the left cell
+We want to reach equilibrium for both cells (x30 or x100
+Use as condition for new simulation
+	2. Make it so Mu and Rho (Fluid Viscosity and Fluid Mass Density) are same as reality
+		Mu and Rho of Water
+		Mu and time can be whatever unit I want (Currently corresponds to seconds?)
+make cell bigger, like 5 times bigger
+Mu should be fine as is
+Rho want Rho = 10~-9 (right now 10^-4), but smaller means way more computational time
+	10^-6 is limit for Jonathan's experience
+Can you get it to run up to 0.1 seconds in a day or so?
+Springs between cells should rest at 0.01 m (but try 0. 1)
+
+Edit spring lengths/constants, beam assignments
+Add beans too inside of vert.
+
+1. Add beams
+2. Check beams
+3. Test with springs lengths
+4. Test cleft sizes
+5. Fix workflow
+6. Write bash scripts
+7. Clean up code and simulations, combine programs
+8. 3d
+
+dot anchor file, anchor everything but cleft (or target)
+
+Remember google group
+Replicate bellows
+Shrink bounds of simulation, double layer cells
+
+CHECK DIAGRAM
+Make Line + Cell
+Make D + D
+Add second layer to cell
+Add attaching cables
+Reflection off side effect
+Fluid spiral out not forward
+Back to pull idea?
+Adding double layers
