@@ -1,5 +1,5 @@
 // physical parameters
-L      = 15.0                             // width of computational domain
+L      = 20.0                             // width of computational domain
 MU     = 1.2e-3                           // corresponds to Re=210
 RHO    = 3.0e-4
 V0     = 280.0
@@ -243,4 +243,5 @@ TimerManager{
    print_threshold = 0.1
    timer_list      = "IBAMR::*::*","IBTK::*::*","*::*::*"
 }
+
 
