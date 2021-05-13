@@ -44,14 +44,6 @@ for fileID in range(TimeSliderGetNStates()):
 outputFile.close()
 
 # Images
-AddPlot("Pseudocolor", "P")
-DrawPlots()
-
-p  # Lists p
-p.opacityType = 2  # Means Constant
-p.opacity = 0.2
-SetPlotOptions(p)
-
 s = SaveWindowAttributes()
 s.format = s.PNG
 s.fileName = "slice"
@@ -66,16 +58,13 @@ for state in range(TimeSliderGetNStates()):
     SetTimeSliderState(state)
     SaveWindow()
 
-gif
-import os
-
-print("VisIt: Message - Rendering gif...")
-os.system(
-    "convert -delay 30 -loop 0 ./VisExport/Images/*.png ./VisExport/Images/sim.gif"
-)
+# gif
+# import os
+# print("VisIt: Message - Rendering gif...")
+# os.system("convert -delay 30 -loop 0 ./VisExport/Images/*.png ./VisExport/Images/sim.gif")
 # If you're not on a UNIX system then use ffmpeg, or just comment this out
-print("VisIt: Message - Saving gif...")
-print("VisIt: Message - Saved ./VisExport/Images/sim.gif")
+# print("VisIt: Message - Saving gif...")
+# print("VisIt: Message - Saved ./VisExport/Images/sim.gif")
 
 exit()
 
